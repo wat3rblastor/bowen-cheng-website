@@ -5,7 +5,9 @@ const NavBar = () => {
     <nav className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <div className="text-primary font-bold text-xl">
-          Bowen Cheng
+          <a href="#" className="text-primary hover:text-primary/70 transition">
+            Bowen Cheng
+          </a>
         </div>
         <div className="space-x-4">
           <a href="#about" className="text-primary hover:text-primary/70 transition">
