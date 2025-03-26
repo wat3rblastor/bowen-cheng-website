@@ -9,7 +9,7 @@ const Contact = () => {
         </h2>
         <div className="max-w-md mx-auto">
           <form
-            action="https://formspree.io/f/yourFormID"
+            action="https://formspree.io/f/xnnpzepb"
             method="POST"
             className="space-y-4"
           >
