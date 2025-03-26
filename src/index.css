@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Global styling */
+body {
+  background-color: #f9fafb; /* Off-white */
+  color: #0a192f; /* Can use secondary as default text color */
+  font-family: sans-serif;
+}
