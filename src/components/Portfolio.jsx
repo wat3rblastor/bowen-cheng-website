@@ -4,22 +4,28 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
-      title: "Project One",
-      description: "A brief description of project one.",
+      title: "Pokefantasia",
+      description: "Built a serverless web app that classifies and transforms Pokémon images using a custom Vision Transformer model, deployed with AWS services including Lambda, S3, and RDS.",
       link: "#"
     },
     {
       id: 2,
-      title: "Project Two",
-      description: "A brief description of project two.",
+      title: "Network Security Audit Tool",
+      description: "Developed a Python tool to automate network security assessments, analyzing protocols, TLS, RTT, and generating structured reports for easy interpretation.",
       link: "#"
     },
     {
       id: 3,
-      title: "Project Three",
-      description: "A brief description of project three.",
+      title: "RustyDB",
+      description: "Created a lightweight database engine in Rust, implementing core SQL functionality and optimizing memory access using an LRU-K buffer pool strategy.",
       link: "#"
     },
+    {
+        id: 4,
+        title: "SmartBrain",
+        description: "Built a full-stack facial recognition web app using React, Node.js, and PostgreSQL, with secure user authentication and real-time image analysis.",
+        link: "#"
+    }
   ];
 
   return (
