@@ -6,25 +6,19 @@ const Portfolio = () => {
       id: 1,
       title: "Pokefantasia",
       description: "Built a serverless web app that classifies and transforms Pokémon images using a custom Vision Transformer model, deployed with AWS services including Lambda, S3, and RDS.",
-      link: "#"
+      link: "https://github.com/wat3rblastor/pokefantasia_frontend"
     },
     {
       id: 2,
       title: "Network Security Audit Tool",
       description: "Developed a Python tool to automate network security assessments, analyzing protocols, TLS, RTT, and generating structured reports for easy interpretation.",
-      link: "#"
+      link: "https://github.com/wat3rblastor/network_security_audit"
     },
     {
       id: 3,
-      title: "RustyDB",
-      description: "Created a lightweight database engine in Rust, implementing core SQL functionality and optimizing memory access using an LRU-K buffer pool strategy.",
+      title: "SmartBrain",
+      description: "Built a full-stack facial recognition web app using React, Node.js, and PostgreSQL, with secure user authentication and real-time image analysis.",
       link: "#"
-    },
-    {
-        id: 4,
-        title: "SmartBrain",
-        description: "Built a full-stack facial recognition web app using React, Node.js, and PostgreSQL, with secure user authentication and real-time image analysis.",
-        link: "#"
     }
   ];
 
