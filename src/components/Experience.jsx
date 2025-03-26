@@ -9,31 +9,50 @@ const Experience = () => {
         </h2>
         
         <div className="space-y-8 text-secondary">
-          {/* First Role */}
+
           <div>
-            <h3 className="text-xl font-semibold">Software Engineer Intern</h3>
+            <h3 className="text-xl font-semibold">Software Development Intern</h3>
             <p className="text-sm text-secondary/80">
-              Company A (2024 - 2025)
+              Medline Industries (Incoming)
+            </p>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold">Undergraduate Research Assistant</h3>
+            <p className="text-sm text-secondary/80">
+              Northwestern Institute on Complex Systems (December 2024 - Present)
             </p>
             <ul className="list-disc list-inside mt-2 space-y-1">
-              <li>Built and optimized new features using React and Node.js</li>
-              <li>Improved database queries with PostgreSQL for faster performance</li>
-              <li>Collaborated with cross-functional teams to design scalable solutions</li>
+              <li>Engineered a low-latency LED control system in C to study coupled oscillators in firefly populations, integrating a
+              laptop, Raspberry Pi, and addressable LEDs to enable precise, real-time dynamic lighting sequences</li>
+              <li>Designed a data pipeline from laptop to Raspberry Pi via UDP over an Ethernet cable, achieving sub-5ms latency</li>
+              <li>Developed simulations to replicate firefly flashing patterns, enabling experiments such as mirrored firefly behavior</li>
             </ul>
           </div>
 
-          {/* Second Role */}
           <div>
-            <h3 className="text-xl font-semibold">Freelance Developer</h3>
+            <h3 className="text-xl font-semibold">Software Engineer Intern</h3>
             <p className="text-sm text-secondary/80">
-              Various Clients (2023 - Present)
+              GHY Impact Capital (July 2024 - September 2024)
             </p>
             <ul className="list-disc list-inside mt-2 space-y-1">
-              <li>Designed and developed custom websites for small businesses</li>
-              <li>Focused on clean, minimalistic UI and optimized performance</li>
-              <li>Integrated SEO best practices to improve site visibility</li>
+              <li>Designed AI-powered chatbot using GPT models and Retrieval-Augmented Generation to answer customer FAQs</li>
+              <li>Created an automated, AI-based version control summary system, simplifying workflows for software developers</li>
+              <li>Wrote a script to perform hourly checks for AWS RDS backups, utilizing GitHub Actions for automation</li>
             </ul>
           </div>
+
+          <div>
+            <h3 className="text-xl font-semibold">Undergraduate Research Assistant</h3>
+            <p className="text-sm text-secondary/80">
+            Northwestern IMEC Lab (January 2024 - March 2024)
+            </p>
+            <ul className="list-disc list-inside mt-2 space-y-1">
+              <li>Engineered a microphone system integrating a camera to filter background noise using lip movement detection</li>
+              <li>Preprocessed and cleaned dataset of lip movements to train a machine learning model for speech detection</li>
+            </ul>
+          </div>
+
         </div>
       </div>
     </section>

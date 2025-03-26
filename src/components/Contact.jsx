@@ -14,7 +14,7 @@ const Contact = () => {
             className="space-y-4"
           >
             <div>
-              <label className="block text-sm text-primary font-medium" htmlFor="name">
+              <label className="block text-sm text-secondary font-medium" htmlFor="name">
                 Name
               </label>
               <input
@@ -26,7 +26,7 @@ const Contact = () => {
               />
             </div>
             <div>
-              <label className="block text-sm text-primary font-medium" htmlFor="email">
+              <label className="block text-sm text-secondary font-medium" htmlFor="email">
                 Email
               </label>
               <input
@@ -38,7 +38,7 @@ const Contact = () => {
               />
             </div>
             <div>
-              <label className="block text-sm text-primary font-medium" htmlFor="message">
+              <label className="block text-sm text-secondary font-medium" htmlFor="message">
                 Message
               </label>
               <textarea
@@ -51,7 +51,7 @@ const Contact = () => {
             </div>
             <button
               type="submit"
-              className="w-full border border-primary text-primary py-2 rounded hover:bg-primary hover:text-white transition"
+              className="w-full border border-primary text-primay py-2 rounded hover:bg-primary hover:text-white transition"
             >
               Send Message
             </button>
