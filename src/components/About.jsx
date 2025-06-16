@@ -17,10 +17,7 @@ const About = () => {
                About Me
             </h2>
             <p className="mb-4 leading-relaxed text-secondary">
-              Hi, I’m Bowen. I’m a computer science and mathematics student at Northwestern University, originally from Chicago. I’m especially interested in systems, infrastructure, and how software works under the hood.
-            </p>
-            <p className="mb-8 leading-relaxed text-secondary">
-            I enjoy thinking through the details, writing clean code, and understanding the bigger picture behind technical decisions. Outside of school, I’ve studied violin for many years, which has taught me discipline and precision that I carry into my work.
+               Hi, I am Bowen. I am a computer science student at Northwestern University, graduating with both a bachelors and a masters in 4 years. I am interested in distributed systems and machine learning.
             </p>
             <a
                href="/resume.pdf"

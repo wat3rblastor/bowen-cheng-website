@@ -20,6 +20,25 @@ const Experience = () => {
           <div>
             <h3 className="text-xl font-semibold">Undergraduate Research Assistant</h3>
             <p className="text-sm text-secondary/80">
+              Aqualab @ Northwestern University (March 2025 - Present)
+            </p>
+            <ul className="list-disc list-inside mt-2 space-y-1">
+              <li>
+                Architected and deployed <a href="/splash.pdf"><b>Splashv2</b></a>, a fully reproducible, config-driven traceroute ingestion pipeline with Dagster,
+                Docker Compose, ClickHouse, and Grafana, reducing researcher setup time from days to under one hour
+              </li>
+              <li>
+                Enabled scalable ingestion, processing, and annotation of 1.6M+ RIPE Atlas traceroutes with IPInfo enrichment
+              </li>
+              <li>
+                Accelerated traceroute geolocation by 86% through multi-core parallelization and optimized data workflows
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="text-xl font-semibold">Undergraduate Research Assistant</h3>
+            <p className="text-sm text-secondary/80">
               Northwestern Institute on Complex Systems (December 2024 - Present)
             </p>
             <ul className="list-disc list-inside mt-2 space-y-1">

@@ -4,18 +4,24 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
+      title: "Privacy Backplane Distributed System",
+      description: "Built core networking and query deployment infrastructure for PBDS, a peer-to-peer system that executes privacy-compliant queries over sensor data. Implemented a custom gossip protocol using libp2p for peer discovery and developed distributed query orchestration using Rust and async RPCs.",
+      link: "/pbds.pdf"
+    },
+    {
+      id: 2,
       title: "Pokefantasia",
       description: "Built a serverless web app that classifies and transforms Pokémon images using a custom Vision Transformer model, deployed with AWS services including Lambda, S3, and RDS.",
       link: "https://github.com/wat3rblastor/pokefantasia_frontend"
     },
     {
-      id: 2,
+      id: 3,
       title: "Network Security Audit Tool",
       description: "Developed a Python tool to automate network security assessments, analyzing protocols, TLS, RTT, and generating structured reports for easy interpretation.",
       link: "https://github.com/wat3rblastor/network_security_audit"
     },
     {
-      id: 3,
+      id: 4,
       title: "SmartBrain",
       description: "Built a full-stack facial recognition web app using React, Node.js, and PostgreSQL, with secure user authentication and real-time image analysis.",
       link: "#"

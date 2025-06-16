@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from './components/NavBar.jsx';
 import Hero from './components/Hero.jsx';
 import About from './components/About.jsx';
-import Experience from './components/Experience.jsx'; // NEW
+import Experience from './components/Experience.jsx';
 import Portfolio from './components/Portfolio.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
