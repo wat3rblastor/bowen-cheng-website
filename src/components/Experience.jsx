@@ -13,8 +13,13 @@ const Experience = () => {
           <div>
             <h3 className="text-xl font-semibold">Software Development Intern</h3>
             <p className="text-sm text-secondary/80">
-              Medline Industries (Incoming)
+              Medline Industries (June 2025 - August 2025)
             </p>
+            <ul className="list-disc list-inside mt-2 space-y-1">
+              <li>
+                Built a Python-based voice agent pipeline using Azure STT/TTS, GPT, and RAG over Azure AI Search to prototype a generative AI system that understands IT Helpdesk requests and reduces manual routing latency
+              </li>
+            </ul>
           </div>
 
           <div>
