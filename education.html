@@ -20,62 +20,84 @@
     <section class="courses__intro">
       <h1 class="courses__title">Courses</h1>
       <p class="courses__lede">
-        A selection of courses at Northwestern, grouped by focus areas like Systems, Machine Learning, and Math.
+        All courses I have taken at <a href="https://www.northwestern.edu/">Northwestern University</a>.
       </p>
     </section>
 
+    <!-- SYSTEMS -->
     <section id="systems" class="cat-block" aria-labelledby="systems-title">
       <h2 class="cat-title" id="systems-title">Systems</h2>
       <ul class="courses__list">
+        <li class="courses__item">
+          <h3 class="courses__name">CS 213 — Intro to Computer Systems</h3>
+          <p class="courses__desc">C, memory, processes, linking, performance.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">CS 310 — Scalable Software Architecture</h3>
+          <p class="courses__desc">Designing, deploying, and operating scalable services.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">CS 339 — Database Systems</h3>
+          <p class="courses__desc">Relational design, transactions, indexing, query processing.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">CS 340 — Introduction to Networking</h3>
+          <p class="courses__desc">Links, IP, TCP, routing, DNS, congestion control.</p>
+        </li>
         <li class="courses__item">
           <h3 class="courses__name">CS 343 — Operating Systems</h3>
           <p class="courses__desc">Concurrency, synchronization, virtual memory, processes. Projects in C.</p>
         </li>
         <li class="courses__item">
           <h3 class="courses__name">CS 345 — Distributed Systems</h3>
-          <p class="courses__desc">Consensus, replication, fault tolerance. Implemented Raft.</p>
+          <p class="courses__desc">Consensus, replication, fault tolerance. Implemented Raft in Go.</p>
         </li>
         <li class="courses__item">
-          <h3 class="courses__name">CS 440 — Kernel and Low Level Development</h3>
-          <p class="courses__desc">Kernel design, drivers, memory management, low level tooling.</p>
+          <h3 class="courses__name">CS 354 — Computer System Security</h3>
+          <p class="courses__desc">Systems security, vulnerabilities, defenses, threat modeling.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">CS 399 — Projects</h3>
+          <p class="courses__desc">Independent systems project work.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">CS 445 — Internet-scale Experimentation</h3>
+          <p class="courses__desc">Measurement, data collection, and analysis on the Internet.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">CS 446 — Low-level Software Development</h3>
+          <p class="courses__desc">Bare-metal programming, kernels, and hardware interfaces.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">COMP_ENG 346 — Microcontroller System Design</h3>
+          <p class="courses__desc">Embedded systems with microcontrollers.</p>
         </li>
       </ul>
     </section>
 
+    <!-- MACHINE LEARNING -->
     <section id="ml" class="cat-block" aria-labelledby="ml-title">
       <h2 class="cat-title" id="ml-title">Machine Learning</h2>
       <ul class="courses__list">
         <li class="courses__item">
           <h3 class="courses__name">CS 349 — Introduction to Machine Learning</h3>
-          <p class="courses__desc">Supervised and unsupervised methods. Logistic regression, SVM, neural nets from
-            scratch.</p>
+          <p class="courses__desc">Supervised and unsupervised methods. Logistic regression, SVM, neural nets from scratch.</p>
         </li>
-      </ul>
-    </section>
-
-    <section id="ai" class="cat-block" aria-labelledby="ai-title">
-      <h2 class="cat-title" id="ai-title">AI</h2>
-      <ul class="courses__list">
         <li class="courses__item">
-          <h3 class="courses__name">EECS 325 — AI Programming</h3>
-          <p class="courses__desc">Symbolic search and planning. Built agents in Lisp.</p>
+          <h3 class="courses__name">CS 449 — Deep Learning</h3>
+          <p class="courses__desc">Modern neural networks and training at scale.</p>
         </li>
       </ul>
     </section>
 
-    <section id="math" class="cat-block" aria-labelledby="math-title">
-      <h2 class="cat-title" id="math-title">Math</h2>
-      <ul class="courses__list">
-        <li class="courses__item">
-          <h3 class="courses__name">MATH 330 — Abstract Algebra</h3>
-          <p class="courses__desc">Groups, rings, fields with emphasis on proof and structure.</p>
-        </li>
-      </ul>
-    </section>
-
+    <!-- THEORY -->
     <section id="theory" class="cat-block" aria-labelledby="theory-title">
       <h2 class="cat-title" id="theory-title">Theory</h2>
       <ul class="courses__list">
+        <li class="courses__item">
+          <h3 class="courses__name">CS 214 — Data Structures and Algorithms</h3>
+          <p class="courses__desc">Core data structures, algorithm design, complexity.</p>
+        </li>
         <li class="courses__item">
           <h3 class="courses__name">CS 336 — Design and Analysis of Algorithms</h3>
           <p class="courses__desc">Asymptotics, divide and conquer, dynamic programming, NP completeness.</p>
@@ -83,16 +105,86 @@
       </ul>
     </section>
 
+    <!-- MATH -->
+    <section id="math" class="cat-block" aria-labelledby="math-title">
+      <h2 class="cat-title" id="math-title">Math</h2>
+      <ul class="courses__list">
+        <li class="courses__item">
+          <h3 class="courses__name">MATH 240 — Linear Algebra</h3>
+          <p class="courses__desc">Vector spaces, linear maps, eigenvalues, applications.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">MATH 300 — Foundations of Higher Math</h3>
+          <p class="courses__desc">Proof techniques, logic, sets, functions.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">MATH 308 — Graph Theory</h3>
+          <p class="courses__desc">Graphs, connectivity, coloring, matchings.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">MATH 311-1 — MENU Probability and Stochastic Processes</h3>
+          <p class="courses__desc">Probability theory and stochastic processes.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">MATH 334 — Linear Algebra: Second Course</h3>
+          <p class="courses__desc">Advanced linear algebra and applications.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">MATH 281-2 — Accelerated Math ISP: First Year</h3>
+          <p class="courses__desc">Integrated Science Program sequence in mathematics.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- OTHER -->
     <section id="other" class="cat-block" aria-labelledby="other-title">
       <h2 class="cat-title" id="other-title">Other</h2>
       <ul class="courses__list">
+        <!-- Early CS sequence -->
         <li class="courses__item">
-          <h3 class="courses__name">Add more here</h3>
-          <p class="courses__desc">Use this bucket for electives or cross discipline work.</p>
+          <h3 class="courses__name">CS 111 — Fundamentals of Computer Programming</h3>
+          <p class="courses__desc">Introductory programming.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">CS 211 — Fundamentals of Computer Programming II</h3>
+          <p class="courses__desc">Intermediate programming concepts and design.</p>
+        </li>
+
+        <!-- Comp Eng -->
+        <li class="courses__item">
+          <h3 class="courses__name">COMP_ENG 203 — Intro to Computer Engineering</h3>
+          <p class="courses__desc">Digital logic, computer organization, hardware basics.</p>
+        </li>
+
+        <!-- Science -->
+        <li class="courses__item">
+          <h3 class="courses__name">PHYSICS 125-2 — General Physics for ISP</h3>
+          <p class="courses__desc">Calculus-based mechanics and related topics.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">PHYSICS 126-2 — Physics Laboratory for ISP</h3>
+          <p class="courses__desc">Laboratory for the ISP physics sequence.</p>
+        </li>
+
+        <!-- Communication, Writing, Design, Humanities -->
+        <li class="courses__item">
+          <h3 class="courses__name">COMM_ST 102 — Public Speaking</h3>
+          <p class="courses__desc">Speech composition and delivery.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">ENGLISH 106-1 — Writing in Special Contexts</h3>
+          <p class="courses__desc">Academic and professional writing.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">DSGN 106-1 — DTC-1</h3>
+          <p class="courses__desc">Design Thinking and Communication studio.</p>
+        </li>
+        <li class="courses__item">
+          <h3 class="courses__name">SLAVIC 210-1 — Intro to Russian Literature</h3>
+          <p class="courses__desc">Readings in Russian literature in translation.</p>
         </li>
       </ul>
     </section>
   </main>
 </body>
-
 </html>
