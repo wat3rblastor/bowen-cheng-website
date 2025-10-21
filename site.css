@@ -66,20 +66,6 @@ a:hover::after {
   box-sizing: border-box;
 }
 
-/* full-width divider after header (non-home pages only) */
-body:not(.home) .site-header::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--accent);
-  opacity: 0.8;
-  z-index: 1;
-  /* sits behind small dash */
-}
-
 .site-header__inner {
   display: flex;
   align-items: center;
@@ -94,31 +80,40 @@ body:not(.home) .site-header::after {
   font-weight: 300;
   letter-spacing: 0.01em;
   transition: color 0.25s ease;
-  position: relative;
-  z-index: 2;
 }
 
 .site-header__link:hover {
   color: var(--link);
 }
 
-/* ============ Unified spacing for all non-home pages ============ */
-body:not(.home) main {
-  margin: 0 auto 10vh;
-  padding-top: 56px;
-  /* extra spacing to accommodate lower dash */
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
+/* Full width divider under header on all non-home pages, courses feel (softer) */
+body:not(.home) .site-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.6;
+  z-index: 1;
 }
 
-/* short light-blue dash between header and title */
+/* ============ Non-home pages use the courses feel for spacing and dash ============ */
+body:not(.home) main {
+  margin: 12vh auto 10vh;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  position: relative;
+  padding-top: 0;
+}
+
+/* short bridge dash positioned like courses */
 body:not(.home) main::before {
   content: "";
   position: absolute;
-  top: 28px;
-  /* visibly below full-width divider */
+  top: -4vh;
   left: 0;
   width: 60px;
   height: 1.5px;
@@ -126,7 +121,6 @@ body:not(.home) main::before {
   border-radius: 2px;
   opacity: 0.6;
   z-index: 2;
-  /* above the background */
 }
 
 /* ============ Blog list page ============ */
@@ -182,7 +176,7 @@ body:not(.home) main::before {
   transition: transform var(--post-underline-speed) ease;
 }
 
-/* ============ Single post page ============ */
+/* ============ Blog post page ============ */
 .post__article {
   display: flex;
   flex-direction: column;
@@ -278,9 +272,64 @@ body:not(.home) main::before {
   transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
+.cats__link::after {
+  display: none;
+}
+
 .cats__link:hover {
   background: var(--accent);
   border-color: rgba(10, 10, 10, 0.15);
+}
+
+.cat-block {
+  scroll-margin-top: 96px;
+}
+
+.cat-title {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+/* course name now styled as text, not link */
+.courses__name {
+  margin: 0 0 4px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text);
+  /* normal text color */
+  cursor: default;
+  /* no pointer */
+}
+
+.courses__name:hover {
+  color: var(--text);
+  /* prevent hover color change */
+}
+
+.courses__name::after {
+  display: none;
+}
+
+/* remove underline effect */
+
+.courses__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(10, 10, 10, 0.08);
+}
+
+.courses__item {
+  border-bottom: 1px solid rgba(10, 10, 10, 0.08);
+  padding: 18px 0;
+}
+
+.courses__desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: 68ch;
 }
 
 /* ============ Home page ============ */
@@ -321,13 +370,12 @@ body.home footer {
   }
 
   body:not(.home) main {
-    margin: 0 auto 8vh;
-    padding-top: 48px;
-    gap: 36px;
+    margin: 12vh auto 8vh;
+    gap: 32px;
   }
 
   body:not(.home) main::before {
-    top: 24px;
+    top: -4vh;
   }
 
   .posts__title {
