@@ -1,4 +1,6 @@
-/* ============ Variables ============ */
+/* =========================================
+   Variables
+========================================= */
 :root {
   --bg: #ffffff;
   --text: #0a0a0a;
@@ -9,7 +11,9 @@
   --font: "Inter", "Helvetica Neue", Helvetica, "Segoe UI", Roboto, Arial, sans-serif;
 
   --max-width: 720px;
+  /* posts, courses, experience */
   --home-max-width: 650px;
+  /* homepage */
   --gutter: 24px;
 
   --name-underline-speed: 0.4s;
@@ -17,7 +21,10 @@
   --back-underline-speed: 0.5s;
 }
 
-/* ============ Base ============ */
+
+/* =========================================
+   Base
+========================================= */
 html,
 body {
   margin: 0;
@@ -28,6 +35,17 @@ body {
   line-height: 1.7;
 }
 
+.content-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+  box-sizing: border-box;
+}
+
+
+/* =========================================
+   Links
+========================================= */
 a {
   color: var(--link);
   text-decoration: none;
@@ -45,20 +63,17 @@ a::after {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s ease;
+  /* baseline underline speed (same as index.html) */
 }
 
 a:hover::after {
   transform: scaleX(1);
 }
 
-.content-container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 var(--gutter);
-  box-sizing: border-box;
-}
 
-/* ============ Header ============ */
+/* =========================================
+   Header
+========================================= */
 .site-header {
   width: 100%;
   padding: 24px 0 20px;
@@ -86,7 +101,7 @@ a:hover::after {
   color: var(--link);
 }
 
-/* Full width divider under header on all non-home pages, courses feel (softer) */
+/* Divider below header on all non-home pages */
 body:not(.home) .site-header::after {
   content: "";
   position: absolute;
@@ -99,9 +114,14 @@ body:not(.home) .site-header::after {
   z-index: 1;
 }
 
-/* ============ Non-home pages use the courses feel for spacing and dash ============ */
+
+/* =========================================
+   Non-home shared spacing and dash
+   (keeps blog list and blog post perfectly matched)
+========================================= */
 body:not(.home) main {
   margin: 12vh auto 10vh;
+  /* same on posts list and single post */
   display: flex;
   flex-direction: column;
   gap: 36px;
@@ -109,11 +129,12 @@ body:not(.home) main {
   padding-top: 0;
 }
 
-/* short bridge dash positioned like courses */
+/* short light-blue dash */
 body:not(.home) main::before {
   content: "";
   position: absolute;
   top: -4vh;
+  /* same on posts list and single post */
   left: 0;
   width: 60px;
   height: 1.5px;
@@ -123,7 +144,10 @@ body:not(.home) main::before {
   z-index: 2;
 }
 
-/* ============ Blog list page ============ */
+
+/* =========================================
+   Blog list page
+========================================= */
 .posts__intro {
   display: grid;
   gap: 12px;
@@ -172,11 +196,16 @@ body:not(.home) main::before {
   color: var(--link);
 }
 
-.posts__link::after {
+/* slow underline only for links in the list */
+.posts__list .posts__link::after {
   transition: transform var(--post-underline-speed) ease;
 }
 
-/* ============ Blog post page ============ */
+
+/* =========================================
+   Blog post page
+   (spacing matches blog list via shared rules above)
+========================================= */
 .post__article {
   display: flex;
   flex-direction: column;
@@ -189,14 +218,6 @@ body:not(.home) main::before {
   margin-bottom: 48px;
 }
 
-.post__kicker {
-  margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.75rem;
-  color: var(--muted);
-}
-
 .post__title {
   margin: 0;
   font-size: 2.4rem;
@@ -204,23 +225,20 @@ body:not(.home) main::before {
   line-height: 1.2;
 }
 
-.post__meta {
-  margin: 0;
-  font-size: 0.95rem;
-  color: var(--muted);
-}
-
-.post__lede {
-  margin: 0;
-  font-size: 1.1rem;
-  max-width: 68ch;
-  color: var(--text);
-}
-
 .post__body {
   display: grid;
-  gap: 24px;
+  gap: 5px;
+  /* tighter flow */
   max-width: 68ch;
+}
+
+/* tighter spacing between h2 and following text */
+.post__body h2 {
+  margin-top: 36px;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 .post__quote {
@@ -236,116 +254,138 @@ body:not(.home) main::before {
   margin-top: 60px;
 }
 
-/* ============ Courses page ============ */
+
+/* =========================================
+   Post images
+========================================= */
+.post__figure {
+  margin: 28px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.post__figure img {
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post__figure figcaption {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+  max-width: 68ch;
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   "Back to all posts" link
+========================================= */
+.post__back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: var(--link);
+  position: relative;
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.post__back-link::before {
+  content: "\2190";
+  display: inline-block;
+  transform: translateY(-1px);
+  transition: transform 0.25s ease;
+}
+
+.post__back-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--back-underline-speed) ease;
+}
+
+.post__back-link:hover {
+  color: var(--text);
+  transform: translateX(-2px);
+}
+
+.post__back-link:hover::before {
+  transform: translate(-3px, -1px);
+}
+
+.post__back-link:hover::after {
+  transform: scaleX(1);
+}
+
+
+/* =========================================
+   Courses page
+========================================= */
 .courses__intro {
   display: grid;
   gap: 16px;
   max-width: 68ch;
 }
 
-.courses__title {
-  margin: 0;
-  font-size: 2.2rem;
-  font-weight: 600;
-  line-height: 1.1;
-}
-
-.courses__lede {
-  margin: 0;
-  font-size: 1.05rem;
-  color: rgba(10, 10, 10, 0.75);
-}
-
-.cats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 14px;
-}
-
-.cats__link {
-  display: inline-block;
-  padding: 6px 10px;
-  border: 1px solid rgba(10, 10, 10, 0.10);
-  border-radius: 8px;
-  font-size: 0.9rem;
-  color: var(--text);
-  transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-
-.cats__link::after {
-  display: none;
-}
-
-.cats__link:hover {
-  background: var(--accent);
-  border-color: rgba(10, 10, 10, 0.15);
-}
-
-.cat-block {
-  scroll-margin-top: 96px;
-}
-
-.cat-title {
-  margin: 0 0 8px;
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-
-/* course name now styled as text, not link */
 .courses__name {
   margin: 0 0 4px;
   font-size: 1.05rem;
   font-weight: 500;
   color: var(--text);
-  /* normal text color */
   cursor: default;
-  /* no pointer */
 }
 
 .courses__name:hover {
   color: var(--text);
-  /* prevent hover color change */
 }
 
 .courses__name::after {
   display: none;
 }
 
-/* remove underline effect */
 
-.courses__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  border-top: 1px solid rgba(10, 10, 10, 0.08);
+/* =========================================
+   Experience page
+========================================= */
+body.experience-page main.experience {
+  margin: 12vh auto 10vh;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
 }
 
-.courses__item {
-  border-bottom: 1px solid rgba(10, 10, 10, 0.08);
-  padding: 18px 0;
-}
-
-.courses__desc {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
+.experience__intro {
+  display: grid;
+  gap: 16px;
   max-width: 68ch;
 }
 
-/* ============ Home page ============ */
+.experience__role {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+
+/* =========================================
+   Home page
+========================================= */
 body.home main {
   max-width: var(--home-max-width);
   margin: 25vh auto 15vh;
   padding: 0 24px;
-}
-
-body.home p {
-  margin-bottom: 24px;
-}
-
-body.home .contact {
-  margin-top: 32px;
-  font-size: 0.95rem;
 }
 
 body.home footer {
@@ -355,7 +395,10 @@ body.home footer {
   text-align: left;
 }
 
-/* ============ Mobile tweaks ============ */
+
+/* =========================================
+   Mobile tweaks
+========================================= */
 @media (max-width: 600px) {
   .content-container {
     padding: 0 16px;
@@ -385,64 +428,4 @@ body.home footer {
   .post__title {
     font-size: 2rem;
   }
-}
-
-/* ============ Experience page ============ */
-body.experience-page main.experience {
-  margin: 12vh auto 10vh;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  position: relative;
-}
-
-.experience__intro {
-  display: grid;
-  gap: 16px;
-  max-width: 68ch;
-}
-
-.experience__title {
-  margin: 0;
-  font-size: 2.2rem;
-  font-weight: 600;
-  line-height: 1.1;
-}
-
-.experience__lede {
-  margin: 0;
-  font-size: 1.05rem;
-  color: rgba(10, 10, 10, 0.75);
-}
-
-.experience__list {
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.experience__item {
-  border-bottom: 1px solid rgba(10, 10, 10, 0.08);
-  padding-bottom: 20px;
-}
-
-.experience__role {
-  margin: 0 0 4px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.experience__meta {
-  margin: 0 0 10px;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-
-.experience__text {
-  margin: 0;
-  font-size: 1rem;
-  max-width: 68ch;
-  line-height: 1.65;
-  color: var(--text);
 }

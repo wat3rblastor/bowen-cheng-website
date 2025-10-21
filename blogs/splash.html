@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Splashv2</title>
+    <link rel="stylesheet" href="../site.css">
+</head>
+
+<body class="post-page">
+    <header class="site-header">
+        <div class="site-header__inner content-container">
+            <a href="../index.html" class="site-header__link">Bowen Cheng</a>
+        </div>
+    </header>
+
+    <main class="post content-container">
+        <article class="post__article">
+            <header class="post__header">
+                <h1 class="post__title">Splashv2</h1>
+                <p class="post__lede">
+                    Aqualab needed a faster path from traceroute measurements to analysis. Splashv2 provides that path
+                    with a single configuration and a single action.
+                </p>
+            </header>
+
+            <section class="post__body">
+                <h2>Abstract</h2>
+                <p>
+                    Splashv2 is a scalable system that automates ingestion, enrichment, storage, and visualization of
+                    traceroutes. Researchers provide parameters, then the pipeline fetches, parses, annotates, and loads
+                    data into ClickHouse. Grafana connects to ClickHouse for immediate queries and visualizations.
+                </p>
+
+                <h2>Background</h2>
+                <p>
+                    Traceroute reveals hop-by-hop paths across the Internet. RIPE Atlas offers large volumes of
+                    measurements through an API, but raw outputs lack context such as geolocation and ASN. Splashv2 adds
+                    these annotations with IPinfo so analyses can focus on network structure rather than glue code.
+                </p>
+
+                <h2>Architecture</h2>
+                <p>
+                    The system has four parts: a Dagster orchestrator, a PostgreSQL metadata store, a ClickHouse
+                    traceroute store, and Grafana for visualization. Users pass countries, measurement IDs, time
+                    windows, and limits. The Dagster job manages flow, retries, and error handling. All components run
+                    in Docker containers and ship with Docker Compose. Configuration is in YAML, with secrets via
+                    environment variables.
+                </p>
+
+                <h2>Data model and tradeoffs</h2>
+                <p>
+                    ClickHouse is the primary store because the workload is large, read-heavy, and append-oriented. The
+                    columnar model enables fast aggregation and filters over millions of rows. Duplicates are allowed at
+                    ingest time and tracked with an insert timestamp. Queries select the most recent record per probe to
+                    handle deduplication on read.
+                </p>
+
+                <h2>Performance</h2>
+                <p>
+                    A representative run ingested about 1.6 million traceroutes in under an hour, with most time bound
+                    by the upstream API fetch. Parallel geolocation across cores reduced that stage by about 86 percent.
+                    Moving traceroutes from PostgreSQL to ClickHouse improved ingestion latency by about 80 percent.
+                    Caching stable RIPE Atlas probe metadata reduced redundant API calls.
+                </p>
+
+                <h2>Example analysis</h2>
+                <p>
+                    A common question is the extent to which country A depends on country B for transit. With Splashv2,
+                    researchers specify countries and measurement IDs, run the pipeline, then issue one SQL-style query
+                    to produce source-to-transit frequencies. Grafana renders a Sankey where wider flows indicate
+                    heavier dependence.
+                </p>
+
+                <figure class="post__figure">
+                    <img src="../assets/splash/sankey.png"
+                        alt="Country dependency Sankey diagram from Splashv2 analysis">
+                    <figcaption>Country-to-country dependency visualization produced in Grafana using Splashv2 output.
+                    </figcaption>
+                </figure>
+
+                <h2>Future work</h2>
+                <p>
+                    Extend to real-time ingestion using RIPE Atlas streaming, add ping measurements for round-trip time,
+                    and migrate to a cloud platform for auto-scaling and higher availability.
+                </p>
+            </section>
+
+            <footer class="post__footer">
+                <a href="../blog_list.html" class="post__back-link">Back to all posts</a>
+            </footer>
+        </article>
+    </main>
+</body>
+
+</html>
