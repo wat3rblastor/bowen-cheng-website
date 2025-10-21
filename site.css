@@ -11,14 +11,16 @@
   --font: "Inter", "Helvetica Neue", Helvetica, "Segoe UI", Roboto, Arial, sans-serif;
 
   --max-width: 720px;
-  /* posts, courses, experience, projects */
+  /* content pages */
   --home-max-width: 650px;
   /* homepage */
   --gutter: 24px;
 
   --name-underline-speed: 0.4s;
   --post-underline-speed: 0.6s;
+  /* slower for post titles in list */
   --back-underline-speed: 0.5s;
+  /* back link at footer */
 }
 
 
@@ -63,7 +65,7 @@ a::after {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s ease;
-  /* baseline like index.html */
+  /* baseline used on index and inline links */
 }
 
 a:hover::after {
@@ -88,7 +90,7 @@ a:hover::after {
   gap: 16px;
 }
 
-/* Name styling (no hover underline) */
+/* Name, thin and sharp, no underline */
 .site-header__link {
   color: var(--text);
   font-size: 1.8rem;
@@ -101,7 +103,7 @@ a:hover::after {
   color: var(--link);
 }
 
-/* Divider below header on all non-home pages */
+/* Full width divider under header on all non-home pages */
 body:not(.home) .site-header::after {
   content: "";
   position: absolute;
@@ -116,11 +118,12 @@ body:not(.home) .site-header::after {
 
 
 /* =========================================
-   Non-home shared spacing and dash
+   Unified non-home spacing and dash
+   (Blog list, Blog post, Courses, Experience, Projects)
 ========================================= */
 body:not(.home) main {
-  margin: 12vh auto 10vh;
-  /* unified with blog list and post */
+  margin: 10vh auto 10vh;
+  /* unified */
   display: flex;
   flex-direction: column;
   gap: 36px;
@@ -128,11 +131,12 @@ body:not(.home) main {
   padding-top: 0;
 }
 
+/* short light blue dash just below header divider */
 body:not(.home) main::before {
   content: "";
   position: absolute;
-  top: -4vh;
-  /* unified dash position */
+  top: -3vh;
+  /* unified */
   left: 0;
   width: 60px;
   height: 1.5px;
@@ -144,7 +148,7 @@ body:not(.home) main::before {
 
 
 /* =========================================
-   Blog list page
+   Blog list
 ========================================= */
 .posts__intro {
   display: grid;
@@ -194,14 +198,14 @@ body:not(.home) main::before {
   color: var(--link);
 }
 
-/* slower underline only for titles in the list */
+/* Slower underline only for titles in the list */
 .posts__list .posts__link::after {
   transition: transform var(--post-underline-speed) ease;
 }
 
 
 /* =========================================
-   Blog post page
+   Blog post
 ========================================= */
 .post__article {
   display: flex;
@@ -222,15 +226,31 @@ body:not(.home) main::before {
   line-height: 1.2;
 }
 
+.post__meta {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.post__lede {
+  margin: 0;
+  font-size: 1.1rem;
+  max-width: 68ch;
+  color: var(--text);
+}
+
 .post__body {
   display: grid;
   gap: 5px;
+  /* tight, consistent flow */
   max-width: 68ch;
 }
 
+/* Headings inside posts */
 .post__body h2 {
   margin-top: 36px;
   margin-bottom: 0;
+  /* stick heading to following paragraph */
   font-size: 1.25rem;
   font-weight: 600;
   line-height: 1.3;
@@ -249,36 +269,7 @@ body:not(.home) main::before {
   margin-top: 60px;
 }
 
-
-/* =========================================
-   Post images
-========================================= */
-.post__figure {
-  margin: 28px 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.post__figure img {
-  max-width: 100%;
-  border-radius: 6px;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-.post__figure figcaption {
-  font-size: 0.9rem;
-  color: var(--muted);
-  text-align: center;
-  max-width: 68ch;
-  line-height: 1.4;
-}
-
-
-/* =========================================
-   "Back to all posts" link
-========================================= */
+/* Back to all posts */
 .post__back-link {
   display: inline-flex;
   align-items: center;
@@ -324,14 +315,102 @@ body:not(.home) main::before {
 
 
 /* =========================================
-   Courses page
+   Post images
+========================================= */
+.post__figure {
+  margin: 28px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.post__figure img {
+  max-width: 100%;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post__figure figcaption {
+  font-size: 0.9rem;
+  color: var(--muted);
+  text-align: center;
+  max-width: 68ch;
+  line-height: 1.4;
+}
+
+
+/* =========================================
+   Courses
 ========================================= */
 .courses__intro {
   display: grid;
-  gap: 16px;
+  gap: 12px;
   max-width: 68ch;
 }
 
+/* match blog intro gap */
+.courses__title {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.courses__lede {
+  margin: 0;
+  font-size: 1.05rem;
+  color: rgba(10, 10, 10, 0.75);
+}
+
+.cats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+}
+
+.cats__link {
+  display: inline-block;
+  padding: 6px 10px;
+  border: 1px solid rgba(10, 10, 10, 0.10);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--text);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.cats__link::after {
+  display: none;
+}
+
+.cats__link:hover {
+  background: var(--accent);
+  border-color: rgba(10, 10, 10, 0.15);
+}
+
+.cat-block {
+  scroll-margin-top: 96px;
+}
+
+.cat-title {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.courses__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid rgba(10, 10, 10, 0.08);
+}
+
+.courses__item {
+  border-bottom: 1px solid rgba(10, 10, 10, 0.08);
+  padding: 18px 0;
+}
+
+/* Names look like text, not links */
 .courses__name {
   margin: 0 0 4px;
   font-size: 1.05rem;
@@ -348,22 +427,50 @@ body:not(.home) main::before {
   display: none;
 }
 
+.courses__desc {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  max-width: 68ch;
+}
+
 
 /* =========================================
-   Experience page
+   Experience
 ========================================= */
 body.experience-page main.experience {
-  margin: 12vh auto 10vh;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  position: relative;
+  /* inherits unified spacing and dash */
 }
 
 .experience__intro {
   display: grid;
-  gap: 16px;
+  gap: 12px;
   max-width: 68ch;
+}
+
+/* match blog intro gap */
+.experience__title {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.experience__lede {
+  margin: 0;
+  font-size: 1.05rem;
+  color: rgba(10, 10, 10, 0.75);
+}
+
+.experience__list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.experience__item {
+  border-bottom: 1px solid rgba(10, 10, 10, 0.08);
+  padding-bottom: 20px;
 }
 
 .experience__role {
@@ -373,33 +480,31 @@ body.experience-page main.experience {
   color: var(--text);
 }
 
-/* =========================================
-   Projects page
-========================================= */
-body.projects-page main.projects {
-  margin: 12vh auto 10vh;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  position: relative;
+.experience__meta {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
-/* blue dash above title, consistent with blogs */
-body.projects-page main.projects::before {
-  content: "";
-  position: absolute;
-  top: -4vh;
-  left: 0;
-  width: 60px;
-  height: 1.5px;
-  background: var(--accent);
-  border-radius: 2px;
-  opacity: 0.6;
+.experience__text {
+  margin: 0;
+  font-size: 1rem;
+  max-width: 68ch;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+
+/* =========================================
+   Projects
+========================================= */
+body.projects-page main.projects {
+  /* inherits unified spacing and dash */
 }
 
 .projects__intro {
   display: grid;
-  gap: 16px;
+  gap: 12px;
   max-width: 68ch;
 }
 
@@ -447,7 +552,7 @@ body.projects-page main.projects::before {
   color: var(--text);
 }
 
-/* project links (GitHub / Demo) */
+/* project links */
 .project__links {
   margin: 0;
   font-size: 0.95rem;
@@ -456,7 +561,6 @@ body.projects-page main.projects::before {
 
 .project__links a {
   color: var(--link);
-  text-decoration: none;
   position: relative;
 }
 
@@ -479,12 +583,21 @@ body.projects-page main.projects::before {
 
 
 /* =========================================
-   Home page
+   Home
 ========================================= */
 body.home main {
   max-width: var(--home-max-width);
   margin: 25vh auto 15vh;
   padding: 0 24px;
+}
+
+body.home p {
+  margin-bottom: 24px;
+}
+
+body.home .contact {
+  margin-top: 32px;
+  font-size: 0.95rem;
 }
 
 body.home footer {
@@ -496,7 +609,7 @@ body.home footer {
 
 
 /* =========================================
-   Mobile tweaks
+   Mobile
 ========================================= */
 @media (max-width: 600px) {
   .content-container {
@@ -513,6 +626,7 @@ body.home footer {
 
   body:not(.home) main {
     margin: 12vh auto 8vh;
+    /* slightly tighter on small screens */
     gap: 32px;
   }
 
@@ -520,15 +634,14 @@ body.home footer {
     top: -4vh;
   }
 
-  .posts__title {
+  .posts__title,
+  .courses__title,
+  .experience__title,
+  .projects__title {
     font-size: 1.9rem;
   }
 
   .post__title {
     font-size: 2rem;
-  }
-
-  .project {
-    grid-template-columns: 1fr;
   }
 }
