@@ -11,7 +11,7 @@
   --font: "Inter", "Helvetica Neue", Helvetica, "Segoe UI", Roboto, Arial, sans-serif;
 
   --max-width: 720px;
-  /* posts, courses, experience */
+  /* posts, courses, experience, projects */
   --home-max-width: 650px;
   /* homepage */
   --gutter: 24px;
@@ -63,7 +63,7 @@ a::after {
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.25s ease;
-  /* baseline underline speed (same as index.html) */
+  /* baseline like index.html */
 }
 
 a:hover::after {
@@ -117,11 +117,10 @@ body:not(.home) .site-header::after {
 
 /* =========================================
    Non-home shared spacing and dash
-   (keeps blog list and blog post perfectly matched)
 ========================================= */
 body:not(.home) main {
   margin: 12vh auto 10vh;
-  /* same on posts list and single post */
+  /* unified with blog list and post */
   display: flex;
   flex-direction: column;
   gap: 36px;
@@ -129,12 +128,11 @@ body:not(.home) main {
   padding-top: 0;
 }
 
-/* short light-blue dash */
 body:not(.home) main::before {
   content: "";
   position: absolute;
   top: -4vh;
-  /* same on posts list and single post */
+  /* unified dash position */
   left: 0;
   width: 60px;
   height: 1.5px;
@@ -196,7 +194,7 @@ body:not(.home) main::before {
   color: var(--link);
 }
 
-/* slow underline only for links in the list */
+/* slower underline only for titles in the list */
 .posts__list .posts__link::after {
   transition: transform var(--post-underline-speed) ease;
 }
@@ -204,7 +202,6 @@ body:not(.home) main::before {
 
 /* =========================================
    Blog post page
-   (spacing matches blog list via shared rules above)
 ========================================= */
 .post__article {
   display: flex;
@@ -228,11 +225,9 @@ body:not(.home) main::before {
 .post__body {
   display: grid;
   gap: 5px;
-  /* tighter flow */
   max-width: 68ch;
 }
 
-/* tighter spacing between h2 and following text */
 .post__body h2 {
   margin-top: 36px;
   margin-bottom: 0;
@@ -378,6 +373,110 @@ body.experience-page main.experience {
   color: var(--text);
 }
 
+/* =========================================
+   Projects page
+========================================= */
+body.projects-page main.projects {
+  margin: 12vh auto 10vh;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  position: relative;
+}
+
+/* blue dash above title, consistent with blogs */
+body.projects-page main.projects::before {
+  content: "";
+  position: absolute;
+  top: -4vh;
+  left: 0;
+  width: 60px;
+  height: 1.5px;
+  background: var(--accent);
+  border-radius: 2px;
+  opacity: 0.6;
+}
+
+.projects__intro {
+  display: grid;
+  gap: 16px;
+  max-width: 68ch;
+}
+
+.projects__title {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.projects__lede {
+  margin: 0;
+  font-size: 1.05rem;
+  color: rgba(10, 10, 10, 0.75);
+}
+
+.projects__list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  border-top: 1px solid rgba(10, 10, 10, 0.08);
+}
+
+.project {
+  border-bottom: 1px solid rgba(10, 10, 10, 0.08);
+  padding-bottom: 20px;
+}
+
+.project__name {
+  margin: 0 0 4px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.project__meta {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.project__desc {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+/* project links (GitHub / Demo) */
+.project__links {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--link);
+}
+
+.project__links a {
+  color: var(--link);
+  text-decoration: none;
+  position: relative;
+}
+
+.project__links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.project__links a:hover::after {
+  transform: scaleX(1);
+}
+
 
 /* =========================================
    Home page
@@ -427,5 +526,9 @@ body.home footer {
 
   .post__title {
     font-size: 2rem;
+  }
+
+  .project {
+    grid-template-columns: 1fr;
   }
 }
