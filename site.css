@@ -309,6 +309,31 @@ body:not(.home) main::before {
   transform: scaleX(1);
 }
 
+/* ============ Acknowledgements section ============ */
+.post__acknowledgements {
+  margin-top: 48px;
+  padding-top: 24px;
+  max-width: 68ch;
+}
+
+.post__acknowledgements p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.post__acknowledgements a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.post__acknowledgements a:hover {
+  color: var(--link);
+}
 
 /* =========================================
    Post images
